@@ -94,7 +94,7 @@ sub start() {
     my $request = HTTP::Request->new(GET => $x_request);
     my $response = $ua->request($request);
     if (!$response->is_success()) {
-        $self->{'errormsg'} = "X-Server request $x_request failed: " . $response->code . ': ' . $response->message . ', content: ' . $response->content;
+        $self->{'errormsg'} = "X-Server request failed: " . $response->code . ': ' . $response->message . ', content: ' . $response->content;
         return undef;
     }
 
